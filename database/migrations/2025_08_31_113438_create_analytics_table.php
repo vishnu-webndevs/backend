@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('video_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('campaign_id')->nullable()->constrained()->onDelete('cascade');
-            $table->enum('event_type', ['video_play', 'cta_click', 'page_view']);
+            $table->enum('event_type', ['video_play', 'video_view', 'video_complete', 'cta_click', 'page_view']);
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->string('device_type')->nullable();

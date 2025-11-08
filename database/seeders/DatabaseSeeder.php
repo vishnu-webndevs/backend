@@ -7,6 +7,7 @@ use App\Models\Campaign;
 use App\Models\Video;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,7 +31,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Creative Agency Pro',
                 'email' => 'agency1@example.com',
-                'role' => 'Agency'
+                'role' => 'Agency',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -39,7 +41,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Digital Marketing Hub',
                 'email' => 'agency2@example.com',
-                'role' => 'Agency'
+                'role' => 'Agency',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -49,7 +52,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'TechCorp Solutions',
                 'email' => 'brand1@example.com',
-                'role' => 'Brand'
+                'role' => 'Brand',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -58,7 +62,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Fashion Forward Inc',
                 'email' => 'brand2@example.com',
-                'role' => 'Brand'
+                'role' => 'Brand',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -67,7 +72,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Healthy Living Co',
                 'email' => 'brand3@example.com',
-                'role' => 'Brand'
+                'role' => 'Brand',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -76,7 +82,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Eco Green Products',
                 'email' => 'brand4@example.com',
-                'role' => 'Brand'
+                'role' => 'Brand',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -85,7 +92,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Urban Lifestyle Brand',
                 'email' => 'brand5@example.com',
-                'role' => 'Brand'
+                'role' => 'Brand',
+                'password' => Hash::make('password')
             ]
         );
 
@@ -95,7 +103,8 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Test User',
                 'email' => 'test@example.com',
-                'role' => 'Admin'
+                'role' => 'Admin',
+                'password' => Hash::make('password')
             ]
         );
 

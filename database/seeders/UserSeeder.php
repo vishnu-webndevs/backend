@@ -13,34 +13,40 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin user
-        User::create([
-            'name' => 'Admin User',
-            'username' => 'admin',
-            'email' => 'admin@preview.watch',
-            'password' => Hash::make('password'),
-            'role' => 'Admin',
-            'is_active' => true,
-        ]);
+        // Admin user (idempotent)
+        User::updateOrCreate(
+            ['username' => 'admin'],
+            [
+                'name' => 'Admin User',
+                'email' => 'admin@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'Admin',
+                'is_active' => true,
+            ]
+        );
 
-        // Create Agency user
-        User::create([
-            'name' => 'Agency User',
-            'username' => 'agency',
-            'email' => 'agency@preview.watch',
-            'password' => Hash::make('password'),
-            'role' => 'Agency',
-            'is_active' => true,
-        ]);
+        // Agency user (idempotent)
+        User::updateOrCreate(
+            ['username' => 'agency'],
+            [
+                'name' => 'Agency User',
+                'email' => 'agency@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'Agency',
+                'is_active' => true,
+            ]
+        );
 
-        // Create Brand user
-        User::create([
-            'name' => 'Brand User',
-            'username' => 'brand',
-            'email' => 'brand@preview.watch',
-            'password' => Hash::make('password'),
-            'role' => 'Brand',
-            'is_active' => true,
-        ]);
+        // Brand user (idempotent)
+        User::updateOrCreate(
+            ['username' => 'brand'],
+            [
+                'name' => 'Brand User',
+                'email' => 'brand@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'Brand',
+                'is_active' => true,
+            ]
+        );
     }
 }

@@ -22,73 +22,82 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         
         // Create demo users as requested
-        
-        // 1 Admin user
-        $admin = User::factory()->create([
-            'name' => 'System Administrator',
-            'username' => 'admin',
-            'email' => 'admin@example.com',
-            'role' => 'Admin'
-        ]);
+        // Note: Admin user is created in UserSeeder; avoid duplicating 'admin' here
 
         // 2 Agency users
-        $agency1 = User::factory()->create([
-            'name' => 'Creative Agency Pro',
-            'username' => 'agency1',
-            'email' => 'agency1@example.com',
-            'role' => 'Agency'
-        ]);
+        $agency1 = User::updateOrCreate(
+            ['username' => 'agency1'],
+            [
+                'name' => 'Creative Agency Pro',
+                'email' => 'agency1@example.com',
+                'role' => 'Agency'
+            ]
+        );
 
-        $agency2 = User::factory()->create([
-            'name' => 'Digital Marketing Hub',
-            'username' => 'agency2',
-            'email' => 'agency2@example.com',
-            'role' => 'Agency'
-        ]);
+        $agency2 = User::updateOrCreate(
+            ['username' => 'agency2'],
+            [
+                'name' => 'Digital Marketing Hub',
+                'email' => 'agency2@example.com',
+                'role' => 'Agency'
+            ]
+        );
 
         // 5 Brand users
-        $brand1 = User::factory()->create([
-            'name' => 'TechCorp Solutions',
-            'username' => 'techcorp',
-            'email' => 'brand1@example.com',
-            'role' => 'Brand'
-        ]);
+        $brand1 = User::updateOrCreate(
+            ['username' => 'techcorp'],
+            [
+                'name' => 'TechCorp Solutions',
+                'email' => 'brand1@example.com',
+                'role' => 'Brand'
+            ]
+        );
 
-        $brand2 = User::factory()->create([
-            'name' => 'Fashion Forward Inc',
-            'username' => 'fashionforward',
-            'email' => 'brand2@example.com',
-            'role' => 'Brand'
-        ]);
+        $brand2 = User::updateOrCreate(
+            ['username' => 'fashionforward'],
+            [
+                'name' => 'Fashion Forward Inc',
+                'email' => 'brand2@example.com',
+                'role' => 'Brand'
+            ]
+        );
 
-        $brand3 = User::factory()->create([
-            'name' => 'Healthy Living Co',
-            'username' => 'healthyliving',
-            'email' => 'brand3@example.com',
-            'role' => 'Brand'
-        ]);
+        $brand3 = User::updateOrCreate(
+            ['username' => 'healthyliving'],
+            [
+                'name' => 'Healthy Living Co',
+                'email' => 'brand3@example.com',
+                'role' => 'Brand'
+            ]
+        );
 
-        $brand4 = User::factory()->create([
-            'name' => 'Eco Green Products',
-            'username' => 'ecogreen',
-            'email' => 'brand4@example.com',
-            'role' => 'Brand'
-        ]);
+        $brand4 = User::updateOrCreate(
+            ['username' => 'ecogreen'],
+            [
+                'name' => 'Eco Green Products',
+                'email' => 'brand4@example.com',
+                'role' => 'Brand'
+            ]
+        );
 
-        $brand5 = User::factory()->create([
-            'name' => 'Urban Lifestyle Brand',
-            'username' => 'urbanlifestyle',
-            'email' => 'brand5@example.com',
-            'role' => 'Brand'
-        ]);
+        $brand5 = User::updateOrCreate(
+            ['username' => 'urbanlifestyle'],
+            [
+                'name' => 'Urban Lifestyle Brand',
+                'email' => 'brand5@example.com',
+                'role' => 'Brand'
+            ]
+        );
 
         // Keep original test user for backward compatibility
-        $user = User::factory()->create([
-            'name' => 'Test User',
-            'username' => 'testuser',
-            'email' => 'test@example.com',
-            'role' => 'Admin'
-        ]);
+        $user = User::updateOrCreate(
+            ['username' => 'testuser'],
+            [
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+                'role' => 'Admin'
+            ]
+        );
 
         // Create sample campaigns for different brands
         $campaign1 = Campaign::create([
